@@ -1,0 +1,13 @@
+.bookmark-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgb(94, 94, 94);
+    cursor: pointer;
+  }
+}
