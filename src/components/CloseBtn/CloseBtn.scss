@@ -1,11 +1,11 @@
-.bookmark-button {
+.close-button {
   border: none;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
   border-radius: 0.1rem;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: rgb(94, 94, 94);

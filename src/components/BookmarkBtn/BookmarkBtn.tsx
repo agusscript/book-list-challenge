@@ -1,8 +1,8 @@
 import "./BookmarkBtn.scss";
 
-function BookmarkBtn() {
+function BookmarkBtn({onClick}) {
   return (
-    <button className="bookmark-button">
+    <button className="bookmark-button" onClick={onClick}>
       <svg
         fill="#ffffff"
         version="1.1"
