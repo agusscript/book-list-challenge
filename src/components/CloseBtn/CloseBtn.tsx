@@ -1,6 +1,6 @@
 import "./CloseBtn.scss";
 
-function CloseBtn({onClick}) {
+function CloseBtn({onClick}: {onClick: React.MouseEventHandler<HTMLButtonElement>}) {
   return (
     <button className="close-button" onClick={onClick}>
       <svg

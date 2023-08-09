@@ -1,6 +1,6 @@
 import "./BookmarkBtn.scss";
 
-function BookmarkBtn({onClick}) {
+function BookmarkBtn({onClick}: {onClick: React.MouseEventHandler<HTMLButtonElement>}) {
   return (
     <button className="bookmark-button" onClick={onClick}>
       <svg
