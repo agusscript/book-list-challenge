@@ -37,12 +37,26 @@ header {
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 
-  .book-item {    
-    img {
-      width: 100%;
-      aspect-ratio: 9/14;
-      object-fit: cover;
-      border-radius: 0.1rem;
+  .book-item {
+    text-align: center;
+    cursor: pointer;
+
+    .img-container {
+      box-sizing: border-box;
+      background-color: #555555ab;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+
+      img {
+        width: 80%;
+        aspect-ratio: 9/14;
+        object-fit: cover;
+        border-radius: 0.2rem;
+        user-select: none;
+      }
     }
 
     h4 {
@@ -56,12 +70,28 @@ header {
   position: fixed;
   padding: 1.2rem 1.5rem;
   height: 100%;
-  width: 40vw;
+  width: 48vw;
   top: 0;
   right: 0;
   background-color: rgb(51, 51, 51);
   color: rgb(224, 224, 224);
   overflow: auto;
+
+  &::-webkit-scrollbar-track {
+    background: rgb(51, 51, 51);
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
   .list-header {
     height: 50px;
@@ -73,28 +103,41 @@ header {
   .list-books-container {
     margin: 2rem 0;
 
-   .book-item {
-    padding-right: 1rem;
-    background-color: #202020;
-    margin: 1rem 0;
-    display: flex;
-    align-items: start;
-    gap: 1rem;
+    .book-item {
+      padding-right: 1rem;
+      background-color: #202020;
+      margin: 1rem 0;
+      display: flex;
+      align-items: start;
+      gap: 1rem;
 
+      h3 {
+        letter-spacing: 0.05rem;
+      }
 
-    h3 {
-      letter-spacing: 0.05rem;
+      img {
+        width: 30%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+      }
     }
+  }
 
-    img {
-      width: 30%;
-      height: 100%;
-      object-fit: cover;
-    }
-   }
+  &.show {
+    animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  &.hidden {
+    visibility: hidden;
   }
 }
 
-.hidden {
-  visibility: hidden;
+@keyframes fadeIn {
+  0% {
+    transform: translate(50%);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
