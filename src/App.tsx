@@ -24,6 +24,9 @@ function App() {
     <article className="book-item" key={book.ISBN} onClick={() => addToList(book)}>
       <div className="img-container">
         <img src={book.cover} alt={book.title} />
+        <p className={`bookmark ${bookList.includes(book) ? "" : "hidden"}`}>
+          Bookmarked
+        </p>
       </div>
       <h4>{book.title}</h4>
     </article>
@@ -36,7 +39,7 @@ function App() {
         <h3>{book.title}</h3>
         <p>{book.author.name}</p>
         <p>{book.synopsis}</p>
-        <p>{book.pages} pages</p>
+        <p>{book.pages} páginas</p>
       </div>
     </article>
   ));
@@ -44,7 +47,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Book List</h1>
+        <h1>Book List Challenge 📚</h1>
         <BookmarkBtn onClick={toggleOpenList} />
       </header>
 
@@ -55,8 +58,26 @@ function App() {
             <CloseBtn onClick={toggleOpenList} />
           </header>
 
-          <div className="list-books-container">{renderListBooks}</div>
+          <div className="list-books-container">
+            <h3 className="book-list-available">
+              {bookList.length == 1
+                ? `${bookList.length} Available Book`
+                : `${bookList.length} Available Books`}
+            </h3>
+            {renderListBooks}
+          </div>
         </section>
+
+        <div className="books-section-header">
+          <h2>{books.length} Available Books</h2>
+          <div className="select-dropdown">
+            <select name="genres" id="genres-select">
+              <option value="all">All genres</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="terror">Terror</option>
+            </select>
+          </div>
+        </div>
 
         <section className="books-container">{renderBooks}</section>
       </main>
