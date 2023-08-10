@@ -2,6 +2,96 @@
   "library": [
     {
       "book": {
+        "title": "El viejo y el mar",
+        "pages": 98,
+        "genre": "Novela",
+        "cover": "https://contentv2.tap-commerce.com/cover/large/9788490748268_1.jpg?id_com=1113",
+        "synopsis": "Santiago es un pescador ya anciano que, día tras día, sale a navegar en su barco en busca de peces por las aguas cubanas del Caribe. Es un hombre solitario acostumbrado a la dureza del mar, con un buen número de arrugas, antiguas cicatrices y manchas en la piel. Su joven ayudante Manolín deja de acompañarle tras 84 días sin conseguir pescar nada junto a él, pero el protagonista de la novela no se rinde: sale al mar una vez más para reafirmar su valía como pescador y consigue un gran pez –mayor que su barca– que no está dispuesto a dejar escapar.",
+        "year": 1952,
+        "ISBN": "9788490748268",
+        "author": {
+          "name": "Ernest Hemingway",
+          "otherBooks": ["Adiós a las armas", "Fiesta"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El nombre de la rosa",
+        "pages": 752,
+        "genre": "Biografía",
+        "cover": "https://images.cdn1.buscalibre.com/fit-in/360x360/4d/b9/4db9da291dbd3e39949c68bfd8e364b9.jpg",
+        "synopsis": "Un monje franciscano investiga una serie de atroces asesinatos y trata de juntar las piezas del rompecabezas para descubrir al asesino.",
+        "year": 1980,
+        "ISBN": "9788426418197",
+        "author": {
+          "name": "Umberto Eco",
+          "otherBooks": ["El cementerio de Praga", "Historia de la belleza"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Muerte en el Nilo",
+        "pages": 232,
+        "genre": "Misterio",
+        "cover": "https://images.cdn1.buscalibre.com/fit-in/360x360/43/f3/43f3fc7b2747044468114b74b8aa5c24.jpg",
+        "synopsis": "Durante unas placenteras vacaciones en Egipto, el detective Hércules Poirot coincide con Linnet y Simon, unos conocidos que están de luna de miel en el país de los faraones. El encanto de tan maravillosos días se rompe cuando una mañana, en el transcurso de un crucero por el Nilo, la bella Linnet aparece muerta de un disparo en la cabeza. ¿Será capaz Poirot de encontrar al asesino de la joven esposa?",
+        "year": 1937,
+        "ISBN": "9789878317823",
+        "author": {
+          "name": "Agatha Christie",
+          "otherBooks": ["Diez negritos", "Coartada perfecta"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El hombre en busca de sentido",
+        "pages": 168,
+        "genre": "Biografía",
+        "cover": "https://contentv2.tap-commerce.com/cover/large/9788425432026_1.jpg?id_com=1113",
+        "synopsis": "El hombre en busca de sentido es el estremecedor relato en el que Viktor Frankl nos narra su experiencia en los campos de concentración.",
+        "year": 1946,
+        "ISBN": "9788425432033",
+        "author": {
+          "name": "Viktor Frankl",
+          "otherBooks": ["Psicoterapia y humanismo", "La voluntad del sentido"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El retrato de Dorian Gray",
+        "pages": 224,
+        "genre": "Ciencia ficción",
+        "cover": "https://www.isliada.org/static/images/2015/01/dorian-gray1-500x773.jpg",
+        "synopsis": "Un joven llamado Dorian Gray es seducido por el hedonismo de su nuevo círculo social y empieza a vivir la vida de un libertino en constante búsqueda del placer.",
+        "year": 1890,
+        "ISBN": "9786555980004",
+        "author": {
+          "name": "Oscar Wilde",
+          "otherBooks": ["El Principe Feliz", "El gigante egoísta"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El Principito",
+        "pages": 96,
+        "genre": "Fábula",
+        "cover": "https://www.penguinlibros.com/ar/2184289/el-principito.jpg",
+        "synopsis": "Fábula mítica y relato filosófico que interroga acerca de la relación del ser humano con su prójimo y con el mundo, El Principito concentra, con maravillosa simplicidad, la constante reflexión de Saint-Exupéry sobre la amistad, el amor, la responsabilidad y el sentido de la vida.",
+        "year": 1943,
+        "ISBN": "9781329305274",
+        "author": {
+          "name": "Antoine de Saint-Exupéry",
+          "otherBooks": ["Tierra de hombres", "El aviador"]
+        }
+      }
+    },
+    {
+      "book": {
         "title": "El Señor de los Anillos",
         "pages": 1200,
         "genre": "Fantasía",
@@ -12,6 +102,21 @@
         "author": {
           "name": "J.R.R. Tolkien",
           "otherBooks": ["El Hobbit", "El Silmarillion"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Los cuatro acuerdos",
+        "pages": 108,
+        "genre": "Desarrollo personal",
+        "cover": "https://contentv2.tap-commerce.com/cover/large/9789507880223_1.jpg?id_com=1113",
+        "synopsis": "En Los Cuatro Acuerdos, don Miguel Ruiz revela la fuente de todas las creencias que nos ponen límites y nos privan de alegría, creando sufrimiento inútil. Basados en la antigua sabiduría tolteca, Los Cuatro Acuerdos nos ofrecen un poderoso código de conducta que puede transformar inmediatamente nuestra vida en una nueva experiencia de libertad, dicha absoluta, y amor.",
+        "year": 2010,
+        "ISBN": "9781934408070",
+        "author": {
+          "name": "Don Miguel Ruiz",
+          "otherBooks": ["La voz del conocimiento", "La maestría del amor"]
         }
       }
     },
