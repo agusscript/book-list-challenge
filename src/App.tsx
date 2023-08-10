@@ -3,22 +3,29 @@ import booksData from "./data/books.json";
 import { Book } from "./types/Book";
 import BookmarkBtn from "./components/BookmarkBtn/BookmarkBtn";
 import CloseBtn from "./components/CloseBtn/CloseBtn";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   const books: Book[] = booksData.library.map((data) => data.book);
   const [openList, setOpenList] = useState<boolean>(false);
   const [genre, setGenre] = useState<string>("");
-  const [bookList, setBookList] = useState<Book[]>([]);
 
-  function addToList(newBook: Book) {
-    setBookList((bookList) =>
-      bookList.includes(newBook)
-        ? bookList.filter((repeatedBook) => repeatedBook != newBook)
-        : [...bookList, newBook]
-    );
+  const [bookList, setBookList] = useState<string[]>([]);
+
+  function addToList(newBook: string): void {
+    const updateBookList = bookList.includes(newBook)
+      ? (bookList.filter((repeatedBook) => repeatedBook !== newBook) as string[])
+      : [...bookList, newBook];
+
+    setBookList(updateBookList);
+
+    localStorage.setItem("bookList", JSON.stringify(updateBookList));
   }
+
+  useEffect(() => {
+    setBookList(JSON.parse(localStorage.getItem("bookList") ?? "[]") as string[]);
+  }, []);
 
   const filteredBooks = genre
     ? books.filter((book) => {
@@ -30,6 +37,7 @@ function App() {
 
   return (
     <>
+      <div className={`overlay ${openList ? "active" : "hidden"}`} onClick={() => setOpenList(!openList)}></div>
       <header>
         <h1>Book List Challenge 📚</h1>
         <BookmarkBtn onClick={() => setOpenList(!openList)} />
@@ -48,15 +56,9 @@ function App() {
                 ? `${bookList.length} Available Book`
                 : `${bookList.length} Available Books`}
             </h3>
-            {bookList.map((book) => (
-              <article className="book-item" key={book.ISBN}>
-                <img src={book.cover} alt={book.title} />
-                <div className="text-content">
-                  <h3>{book.title}</h3>
-                  <p>{book.author.name}</p>
-                  <p>{book.synopsis}</p>
-                  <p>{book.pages} páginas</p>
-                </div>
+            {bookList.map((book: any, index) => (
+              <article className="book-item" key={index}>
+                <h3>{book}</h3>
               </article>
             ))}
           </div>
@@ -84,11 +86,13 @@ function App() {
             <article
               className="book-item"
               key={book.ISBN}
-              onClick={() => addToList(book)}
+              onClick={() => addToList(book.title)}
             >
               <div className="img-container">
                 <img src={book.cover} alt={book.title} />
-                <p className={`bookmark ${bookList.includes(book) ? "" : "hidden"}`}>
+                <p
+                  className={`bookmark ${bookList.includes(book.title) ? "" : "hidden"}`}
+                >
                   Bookmarked
                 </p>
               </div>
@@ -97,7 +101,7 @@ function App() {
           ))}
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
