@@ -20,6 +20,25 @@ main {
   min-height: 100vh;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+
+  &.active {
+    display: block;
+    animation: fade 0.5s;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
 header {
   margin: 1.5rem 0;
   display: flex;
@@ -43,7 +62,7 @@ header {
   position: fixed;
   padding: 1rem 1.5rem;
   height: 100%;
-  width: 50vw;
+  width: 40vw;
   top: 0;
   right: 0;
   background-color: rgb(51, 51, 51);
@@ -51,7 +70,11 @@ header {
   overflow: auto;
 
   @media (max-width: 1024px) {
-    width: 70vw;
+    width: 50vw;
+  }
+
+  @media (max-width: 500px) {
+    width: 80vw;
   }
 
   &::-webkit-scrollbar-track {
@@ -92,38 +115,12 @@ header {
     }
 
     .book-item {
-      padding-right: 1rem;
-      background-color: #202020;
       margin: 1rem 0;
-      display: flex;
-      align-items: start;
-      gap: 1rem;
+      padding: 0.1rem 1rem;
+      background-color: #202020;
 
       h3 {
         letter-spacing: 0.05rem;
-      }
-
-      img {
-        width: 40%;
-        object-fit: cover;
-        user-select: none;
-      }
-
-      @media (max-width: 680px) {
-        flex-direction: column;
-        padding: 1rem;
-
-        h3 {
-          margin: 0;
-        }
-
-        p {
-          margin: 0.8rem 0;
-        }
-
-        img {
-          width: 100%;
-        }
       }
     }
   }
@@ -248,5 +245,14 @@ header {
   }
   100% {
     transform: translate(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
